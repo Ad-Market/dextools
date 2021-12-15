@@ -1,0 +1,328 @@
+#root, .app {
+    height: 100%;
+}
+
+
+// sidebar
+.main-sidebar {
+    position: absolute;
+    height: 100vh;
+    width: 4.75rem;
+    background-color: #1C8BFF;
+    transition: transform .2s ease-in-out,width .2s ease-in-out;
+    box-shadow: 3px 0px 7px -4px #330DFF;
+    z-index: 1000;
+
+    .main-navbar {
+        .logo {
+            width: 3.5rem;
+            padding-left: 1rem;
+        }
+
+        span {
+            transition: opacity 0.5s ease-in-out;
+            transition-delay: 0.5s;
+            visibility: hidden;
+        }
+    }
+
+    .sidebar-section {
+        padding: 0.5rem 0.8rem;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .sidebar-menu {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0.8rem;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #003AC8;
+        }
+
+        .chain-icon {
+            height: 24px;
+        }
+
+        .arrow-icon {
+            min-width: 15px;
+        }
+    }
+
+    &:hover {
+        .chain-text-transition {
+            visibility: inherit;
+            order: inherit;
+        }  
+        
+        .main-navbar {
+            span {
+                visibility: inherit;
+            }
+        }
+    }
+
+    .chain-text-transition {
+        transition: opacity 0ms ease-in-out;
+        transition-delay: 0.2s;
+        visibility: hidden;
+        order: 3;
+    }
+
+    .menu-item {
+        padding: 0.5rem 1.1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #003AC8;
+        }
+
+        .menu-item-icon {
+            min-width: 25px;
+        }
+
+        .chain-text-transition {
+            width: 100%;
+            min-width: 180px;
+            transition-delay: 0.5s;
+            color: white;
+            font-size: 12px;
+            padding-left: 10px;
+        }
+    }
+
+    .menu-items {
+        // display: none;
+        // transition-delay: 0.5s;
+        background-color: #3c71e4;
+        transition: height .35s;
+        height: 200px;
+        overflow: hidden;
+
+        &.eth {
+            height: 240px;
+        }
+
+
+        &.collapse {
+            height: 0;
+            overflow: hidden;
+        }
+    }
+
+    
+}
+/// end sidebar
+
+.app main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #f5f6f8;
+    padding-left: 5.25rem;
+    background: rgb(0,168,255);
+    background: linear-gradient(90deg, rgba(0,168,255,1) 0%, rgba(110,100,246,1) 100%);
+}
+
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+    background-color: hsla(0,0%,100%,.05);;
+}
+
+.hot-pair-header {
+    border-bottom: 1px solid #e6e6e6;
+
+    .eth-price {
+        font-size: 12px;
+        border-right: 1px solid #e6e6e6;
+        width: 125px;
+        padding: 0.25rem 0.5rem
+    }
+
+    .hot-pairs-title {
+        font-size: 12px;
+        border-right: 1px solid #e6e6e6;
+        width: 125px;
+        padding: 0.25rem 0.5rem
+
+    }
+
+    ul {
+        flex: 2;
+        display: inline-block;
+        vertical-align: middle;
+        list-style: none;
+        width: calc(100% - 570px);
+        font-size: 12px;
+    }
+}
+
+.exchange-title {
+    display: flex;
+    align-items: stretch;
+
+    .exchange-specific-version {
+        align-items: center;
+        border-radius: 5px;
+        display: flex;
+        font-size: 10px;
+        justify-content: space-around;
+        line-height: 1rem;
+        padding: 0.375rem 0.5rem;
+
+        &.pancakeswap {
+            background-color: #f8b612;
+            color: #5a5a5a;
+        }
+    }
+
+    .exchange-logo {
+        background: #fff;
+        border-radius: 50%;
+        height: 1.5em;
+        vertical-align: middle;
+        width: 1.5em;
+    }
+}
+
+.page-header .page-title {
+    letter-spacing: -1px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0;
+    font-size: 1.525rem;
+
+    .erc-wallet {
+        word-break: break-word;
+        font-weight: 200;
+    }
+
+    img {
+        width: 20px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        background-color: #fff;
+        display: inline-block;
+    }
+
+    .page-title-more-data {
+        line-height: 10px;
+
+        & > div {
+            font-weight: 200;
+            letter-spacing: 0;
+            font-size: 1rem;
+        }
+    }
+}
+
+.page-dashboard {
+    .tools {
+        // background: rgb(66,148,254);
+        // background: linear-gradient(0deg, rgba(66,148,254,1) 0%, rgba(47,121,231,1) 100%);
+        position: relative;
+
+        .tools-title, .tools-items {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 0;
+        }
+
+        .tool-icon {
+            width: 35px;
+        }
+    }
+}
+
+.search-wrapper {
+    background: rgb(66,148,254);
+    background: linear-gradient(90deg, rgba(66,148,254,1) 0%, rgba(47,121,231,1) 100%);
+}
+
+.bg-gradient {
+    background: rgb(66,148,254);
+    background: linear-gradient(0deg, rgba(66,148,254,1) 0%, rgba(47,121,231,1) 100%);
+}
+
+.bg-gradient-45 {
+    background: rgb(66,148,254);
+    background: linear-gradient(45deg, rgba(66,148,254,1) 0%, rgba(47,121,231,1) 100%);
+}
+
+.bg-gradient-180 {
+    background: rgb(4,78,255);
+    background: linear-gradient(180deg, rgba(4,78,255,1) 0%, rgba(28,139,255,1) 100%);
+}
+
+.ag-grid-table {
+    .custom-row {
+        &.row-buy {
+            .color-type {
+                color: green;
+            }
+        }
+
+        &.row-sell {
+            .color-type {
+                color: red;
+            }
+        }
+
+        .maker {
+            color: blue;
+        }
+    }
+
+    .ag-body-viewport.ag-layout-normal {
+
+        /* Demonstrate a "mostly customized" scrollbar
+        * (won't be visible otherwise if width/height is specified) */
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 8px;
+            background-color: #aaa; /* or add it to the track */
+        }
+        
+        /* Add a thumb */
+        &::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+        
+    }
+
+    .ag-body-horizontal-scroll-viewport {
+        &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+            background-color: #aaa; /* or add it to the track */
+        }
+        
+        /* Add a thumb */
+        &::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+    }
+}
+
+.page-charts {
+    .token-select {
+        min-width: 300px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
