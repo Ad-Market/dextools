@@ -31,7 +31,7 @@ const TradingView = (props) => {
     useEffect(() => {
         // console.log('tradingViewready', tradingViewReady);
 
-        console.log(options);
+        // console.log(options);
 
         const widgetOptions = {
 			debug: false,

@@ -34,7 +34,7 @@ const datafeed = (pair_address)  => {
 				ticker: symbolName,
 				exchange: split_data[0],
 				minmov: 1,
-				pricescale: 100000000,
+				pricescale: 10000000000,
 				has_intraday: true,
 				intraday_multipliers: ['1', '60'],
 				supported_resolution:  supportedResolutions,
@@ -43,7 +43,7 @@ const datafeed = (pair_address)  => {
 			}
 	
 			if (split_data[2].match(/USD|EUR|JPY|AUD|GBP|KRW|CNY/)) {
-				symbol_stub.pricescale = 100
+				// symbol_stub.pricescale = 100
 			}
 			setTimeout(function() {
 				onSymbolResolvedCallback(symbol_stub)
@@ -55,11 +55,11 @@ const datafeed = (pair_address)  => {
 	
 		},
 		getBars: function(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest) {
-			console.log('=====getBars running')
+			// console.log('=====getBars running')
 			// console.log(symbolInfo, resolution, from, to, firstDataRequest)
 			const tFrom = (new Date(from * 1000).toISOString()).substr(0, 16);
 			const tTo = (new Date(to * 1000).toISOString()).substr(0, 16);
-			console.log(`Requesting bars between ${tFrom} and ${tTo}`)
+			// console.log(`Requesting bars between ${tFrom} and ${tTo}`)
 			// console.log('function args',arguments)
 			// console.log(`Requesting bars between ${new Date(from * 1000).toISOString()} and ${new Date(to * 1000).toISOString()}`)
 			data_provider.getBars(pair_address, tFrom, tTo, symbolInfo, firstDataRequest)
@@ -70,7 +70,7 @@ const datafeed = (pair_address)  => {
 					onHistoryCallback(bars, {noData: true})
 				}
 			}).catch(err => {
-				console.log({err})
+				// console.log({err})
 				onErrorCallback(err)
 			})
 			

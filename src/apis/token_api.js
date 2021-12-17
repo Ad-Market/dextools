@@ -25,6 +25,12 @@ const TokenApi = {
         return api.post('token_pair/search_bsc_token', {
             search: search
         });
+    },
+
+    getLPInfo: (pair_address) => {
+        return api.post('token_pair/get_lp_info', {
+            pair_address, pair_address
+        });
     }
 }
 

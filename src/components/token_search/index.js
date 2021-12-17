@@ -55,11 +55,15 @@ const TokenSearch = (props) => {
                     }))
 
                     callback(options);
+                } else {
+                    callback([]);
                 }
             });
             // setTimeout(() => {
             //     callback(filterColors(iValue));
             // }, 1000);
+        } else {
+            // callback([]);
         }
     };
       
@@ -70,7 +74,7 @@ const TokenSearch = (props) => {
     };
   
     return (
-        <div className='w-full flex lg:w-1/2'>
+        <div className='w-full flex lg:w-1/2 relative z-10'>
             <AsyncSelect
                 cacheOptions
                 loadOptions={loadOptions}
